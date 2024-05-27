@@ -9,6 +9,10 @@ import HandleEvent from './components/HandleEvent/HandleEvent';
 import StateCoponent from './components/StateComponent/StateCoponent';
 import ChangeColor from './components/StateComponent/ChangeColor';
 import ChangeAvatar from './components/StateComponent/ChangeAvatar';
+import ChangeCar from './components/StateComponent/ChangeCar';
+import RenderWithMap from './components/RenderWithMap/RenderWithMap';
+import DemoProps from './components/Props/DemoProps/DemoProps';
+import ProductList from './components/Props/ExRenderProduct/ProductList';
 
 // tạo root trên thẻ div #root
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -33,6 +37,14 @@ root.render(
 
     {/* <ChangeColor /> */}
 
-    <ChangeAvatar />
+    {/* <ChangeAvatar /> */}
+
+    {/* <ChangeCar /> */}
+
+    {/* <RenderWithMap /> */}
+
+    {/* <DemoProps /> */}
+
+    <ProductList />
   </div>,
 );
