@@ -16,41 +16,32 @@ import ProductList from './components/Props/ExRenderProduct/ProductList';
 import ExXemChiTiet from './components/Props/ExXemChiTiet/ExXemChiTiet';
 import ExPhoneCart from './components/Props/ExPhoneCart/ExPhoneCart';
 
+// Cấu hình router dom => phân trang
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import HeaderPage from './components/HeaderPage/HeaderPage';
+import HomeTemplate from './templates/HomeTemplate';
+import AuthTemplate from './templates/AuthTemplate';
+import Login from './page/Login';
+import Register from './page/Register';
+
 // tạo root trên thẻ div #root
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // jsx => class => className
 root.render(
-  <div>
-    {/* <button className="btn btn-success">Click me</button> */}
-    {/* <Card> </Card> */}
-    {/* <Card />
+  <BrowserRouter>
+    <Routes>
+      <Route path="" element={<HomeTemplate />}>
+        <Route index element={<div>Hello cyber soft</div>}></Route>
+        <Route path="bt-gio-hang" element={<ExPhoneCart />}></Route>
+        <Route path="ex-view-detail" element={<ExXemChiTiet />}></Route>
+      </Route>
 
-    <Button /> */}
-    {/* <HomeLayout /> */}
-
-    {/* <DataBinding /> */}
-
-    {/* <StyleComponent /> */}
-
-    {/* <HandleEvent /> */}
-
-    {/* <StateCoponent /> */}
-
-    {/* <ChangeColor /> */}
-
-    {/* <ChangeAvatar /> */}
-
-    {/* <ChangeCar /> */}
-
-    {/* <RenderWithMap /> */}
-
-    {/* <DemoProps /> */}
-
-    {/* <ProductList /> */}
-
-    {/* <ExXemChiTiet /> */}
-
-    <ExPhoneCart />
-  </div>,
+      {/* Template auth */}
+      <Route path="auth" element={<AuthTemplate />}>
+        <Route path="login" element={<Login />}></Route>
+        <Route path="register" element={<Register />}></Route>
+      </Route>
+    </Routes>
+  </BrowserRouter>,
 );
