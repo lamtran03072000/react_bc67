@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 
+// /auth/login
+// /auth/register
 export default class AuthTemplate extends Component {
   render() {
+    // giả định isLogin = true => đã đăng nhập
+    const isLogin = false;
+
+    if (isLogin) {
+      return <Navigate to={'/'} />;
+    }
+
     return (
       <div
         className="d-flex"

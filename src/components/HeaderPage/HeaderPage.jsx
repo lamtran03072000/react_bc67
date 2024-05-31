@@ -43,6 +43,18 @@ export default class HeaderPage extends Component {
                 </NavLink>
               </li>
 
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) => {
+                    return isActive ? 'nav-link bg-danger' : 'nav-link';
+                  }}
+                  aria-current="page"
+                  to="/bt-demo-form"
+                >
+                  Bài tập demo form
+                </NavLink>
+              </li>
+
               {/* <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"

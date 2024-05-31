@@ -17,12 +17,20 @@ import ExXemChiTiet from './components/Props/ExXemChiTiet/ExXemChiTiet';
 import ExPhoneCart from './components/Props/ExPhoneCart/ExPhoneCart';
 
 // Cấu hình router dom => phân trang
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter,
+  NavLink,
+  Navigate,
+  Route,
+  Routes,
+} from 'react-router-dom';
 import HeaderPage from './components/HeaderPage/HeaderPage';
 import HomeTemplate from './templates/HomeTemplate';
 import AuthTemplate from './templates/AuthTemplate';
 import Login from './page/Login';
 import Register from './page/Register';
+import Page404 from './page/Page404';
+import ReactForm from './page/ReactForm/ReactForm';
 
 // tạo root trên thẻ div #root
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -35,6 +43,8 @@ root.render(
         <Route index element={<div>Hello cyber soft</div>}></Route>
         <Route path="bt-gio-hang" element={<ExPhoneCart />}></Route>
         <Route path="ex-view-detail" element={<ExXemChiTiet />}></Route>
+
+        <Route path="bt-demo-form" element={<ReactForm />}></Route>
       </Route>
 
       {/* Template auth */}
@@ -42,6 +52,10 @@ root.render(
         <Route path="login" element={<Login />}></Route>
         <Route path="register" element={<Register />}></Route>
       </Route>
+
+      {/* Khi người dùng truy cập vào đường dẫn bất kì k thuộc các đường dẫn ở trên */}
+      {/* <Route path="*" element={<Page404 />}></Route> */}
+      <Route path="*" element={<Navigate to={'/'} />}></Route>
     </Routes>
   </BrowserRouter>,
 );
